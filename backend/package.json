@@ -1,0 +1,52 @@
+{
+  "name": "helix-backend",
+  "version": "1.0.0",
+  "description": "Helix Industrial Gases Cylinder Rotation Analytics - Backend Service",
+  "main": "src/index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "sync": "node src/scripts/sync-all.js",
+    "sync:skip-api": "node src/scripts/sync-all.js --skip-sync",
+    "sync:trackabout": "node src/scripts/sync-trackabout.js",
+    "sync:zoho": "node src/scripts/sync-zoho.js",
+    "ingest:customers": "node src/scripts/ingest-customers.js",
+    "ingest:holdings": "node src/scripts/ingest-holdings.js",
+    "ingest:invoices": "node src/scripts/ingest-invoices.js",
+    "ingest:items": "node src/scripts/ingest-zoho-items.js",
+    "calculate:metrics": "node src/scripts/calculate-metrics.js",
+    "calculate:metrics:v2": "node src/scripts/calculate-metrics-v2.js",
+    "fetch:invoice-details": "node src/scripts/fetch-invoice-details.js",
+    "fetch:invoice-details:full": "node src/scripts/fetch-invoice-details.js --full",
+    "fetch:asset-history": "node src/scripts/fetch-asset-history.js",
+    "fetch:asset-history:full": "node src/scripts/fetch-asset-history.js --full",
+    "test:apis": "node src/scripts/test-apis.js",
+    "crosscheck": "node src/scripts/crosscheck-customers.js",
+    "report:weekly": "node src/scripts/generate-reports.js weekly",
+    "report:monthly": "node src/scripts/generate-reports.js monthly",
+    "report:alert": "node src/scripts/generate-reports.js alert",
+    "seed:roles": "node src/scripts/seed-agent-roles.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@google/adk": "^0.5.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mongoose": "^8.8.0",
+    "newman": "^6.2.1",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.0",
+    "winston": "^3.15.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@google/adk-devtools": "^0.5.0",
+    "@types/node": "^22.0.0",
+    "vitest": "^3.0.0"
+  }
+}

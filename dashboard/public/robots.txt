@@ -1,0 +1,7 @@
+# helix-gases-relevant subdomain - production client portal (Helix Industrial Gases)
+# This is a private dashboard. Block all search engines from indexing.
+
+User-agent: *
+Disallow: /
+
+# No sitemap - this site is intentionally not indexed

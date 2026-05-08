@@ -1,0 +1,371 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   Industrial Theme — Helix Gases Cylinder Rotation Analytics
+   Light + Dark mode via .light / .dark class on <html>
+   ============================================================ */
+
+@theme inline {
+  /* Semantic color tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Chart palette */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sidebar */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Industrial status colors (theme-aware) */
+  --color-copper: var(--status-copper, oklch(0.65 0.15 50));
+  --color-teal: var(--status-teal, oklch(0.55 0.08 200));
+  --color-ochre: var(--status-ochre, oklch(0.68 0.12 85));
+  --color-slate-rose: var(--status-slate-rose, oklch(0.45 0.08 15));
+  --color-brass: oklch(0.70 0.12 85);
+  --color-bronze: oklch(0.55 0.12 55);
+
+  /* Fonts */
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+
+  /* Radii */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  /* Font size tokens */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.875rem;
+  --font-size-lg: 1rem;
+  --font-size-xl: 1.125rem;
+  --font-size-2xl: 1.25rem;
+  --font-size-3xl: 1.5rem;
+  --font-size-4xl: 2rem;
+  --font-size-5xl: 2.5rem;
+}
+
+/* ============================================================
+   Shared tokens (radius, easing, durations)
+   ============================================================ */
+:root {
+  --radius: 0.75rem;
+
+  /* Easing */
+  --ease-default: cubic-bezier(0.2, 0, 0, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Durations */
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 500ms;
+}
+
+/* ============================================================
+   Dark mode — Contemporary Neutral
+   Cool gray-blue neutrals, copper as pure accent
+   ============================================================ */
+.dark {
+  /* Surface scale — Cool Neutral */
+  --background: oklch(0.14 0.005 260);    /* Deep cool charcoal */
+  --foreground: oklch(0.93 0.005 260);    /* Primary text */
+
+  --card: oklch(0.18 0.008 260);          /* Elevated surface */
+  --card-foreground: oklch(0.93 0.005 260);
+
+  --popover: oklch(0.18 0.008 260);
+  --popover-foreground: oklch(0.93 0.005 260);
+
+  /* Primary = Copper (accent only) */
+  --primary: oklch(0.65 0.15 50);
+  --primary-foreground: oklch(0.14 0.005 260);
+
+  /* Secondary = Cool elevated */
+  --secondary: oklch(0.22 0.005 260);
+  --secondary-foreground: oklch(0.93 0.005 260);
+
+  /* Muted */
+  --muted: oklch(0.22 0.005 260);
+  --muted-foreground: oklch(0.60 0.005 260);  /* Secondary text */
+
+  /* Accent */
+  --accent: oklch(0.22 0.005 260);
+  --accent-foreground: oklch(0.93 0.005 260);
+
+  /* Destructive = Slate Rose */
+  --destructive: oklch(0.45 0.08 15);
+
+  /* Borders & inputs — subtler */
+  --border: oklch(0.24 0.005 260);        /* Subtle divider */
+  --input: oklch(0.24 0.005 260);
+  --ring: oklch(0.65 0.15 50);            /* Copper ring */
+
+  /* Chart colors — Copper, Teal, Brass, Steel, Bronze */
+  --chart-1: oklch(0.65 0.15 50);         /* Copper */
+  --chart-2: oklch(0.55 0.08 200);        /* Teal */
+  --chart-3: oklch(0.70 0.12 85);         /* Brass */
+  --chart-4: oklch(0.40 0.005 260);       /* Steel */
+  --chart-5: oklch(0.55 0.12 55);         /* Bronze */
+
+  /* Sidebar — darker than main bg */
+  --sidebar: oklch(0.12 0.005 260);
+  --sidebar-foreground: oklch(0.93 0.005 260);
+  --sidebar-primary: oklch(0.65 0.15 50);
+  --sidebar-primary-foreground: oklch(0.14 0.005 260);
+  --sidebar-accent: oklch(0.20 0.005 260);
+  --sidebar-accent-foreground: oklch(0.93 0.005 260);
+  --sidebar-border: oklch(0.22 0.005 260);
+  --sidebar-ring: oklch(0.65 0.15 50);
+
+  /* Tertiary text color (utility) */
+  --tertiary: oklch(0.45 0.005 260);
+
+  /* Status colors (dark mode) */
+  --status-copper: oklch(0.65 0.15 50);
+  --status-teal: oklch(0.55 0.08 200);
+  --status-ochre: oklch(0.68 0.12 85);
+  --status-slate-rose: oklch(0.45 0.08 15);
+}
+
+/* ============================================================
+   Light mode — Contemporary Neutral Light
+   Cool off-whites, copper accent only
+   ============================================================ */
+.light {
+  /* Surface scale — Cool Neutral Light */
+  --background: oklch(0.975 0.003 260);   /* Cool off-white */
+  --foreground: oklch(0.18 0.005 260);    /* Near black */
+
+  --card: oklch(0.995 0.002 260);         /* Pure white hint */
+  --card-foreground: oklch(0.18 0.005 260);
+
+  --popover: oklch(0.995 0.002 260);
+  --popover-foreground: oklch(0.18 0.005 260);
+
+  /* Primary = Copper (accent only) */
+  --primary: oklch(0.55 0.15 50);
+  --primary-foreground: oklch(0.98 0.003 260);
+
+  /* Secondary = Cool light gray */
+  --secondary: oklch(0.95 0.003 260);
+  --secondary-foreground: oklch(0.22 0.005 260);
+
+  /* Muted */
+  --muted: oklch(0.93 0.003 260);
+  --muted-foreground: oklch(0.45 0.005 260);
+
+  /* Accent */
+  --accent: oklch(0.93 0.003 260);
+  --accent-foreground: oklch(0.18 0.005 260);
+
+  /* Destructive = Slate Rose (darker for contrast) */
+  --destructive: oklch(0.40 0.12 15);
+
+  /* Borders & inputs — subtler */
+  --border: oklch(0.90 0.003 260);
+  --input: oklch(0.90 0.003 260);
+  --ring: oklch(0.55 0.15 50);
+
+  /* Chart colors — adjusted lightness for light bg */
+  --chart-1: oklch(0.55 0.15 50);         /* Copper */
+  --chart-2: oklch(0.40 0.08 200);        /* Teal */
+  --chart-3: oklch(0.55 0.12 85);         /* Brass */
+  --chart-4: oklch(0.70 0.005 260);       /* Steel */
+  --chart-5: oklch(0.45 0.12 55);         /* Bronze */
+
+  /* Sidebar — slightly cooler than main content */
+  --sidebar: oklch(0.96 0.003 260);
+  --sidebar-foreground: oklch(0.18 0.005 260);
+  --sidebar-primary: oklch(0.55 0.15 50);
+  --sidebar-primary-foreground: oklch(0.98 0.003 260);
+  --sidebar-accent: oklch(0.92 0.003 260);
+  --sidebar-accent-foreground: oklch(0.18 0.005 260);
+  --sidebar-border: oklch(0.88 0.003 260);
+  --sidebar-ring: oklch(0.55 0.15 50);
+
+  /* Tertiary text color (utility) */
+  --tertiary: oklch(0.55 0.005 260);
+
+  /* Status colors (light mode — darker for contrast on light bg) */
+  --status-copper: oklch(0.50 0.15 50);
+  --status-teal: oklch(0.40 0.08 200);
+  --status-ochre: oklch(0.55 0.12 85);
+  --status-slate-rose: oklch(0.35 0.08 15);
+}
+
+/* ============================================================
+   Base layer
+   ============================================================ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  html.light {
+    color-scheme: light;
+  }
+}
+
+/* ============================================================
+   Motion keyframes
+   ============================================================ */
+@keyframes stagger-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes data-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   Animation utility classes
+   ============================================================ */
+.animate-stagger-in {
+  animation: stagger-in var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-data-pulse {
+  animation: data-pulse 2s var(--ease-in-out) infinite;
+}
+
+.animate-skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--muted) 0%,
+    var(--secondary) 50%,
+    var(--muted) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s var(--ease-in-out) infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up var(--duration-slower) var(--ease-out) both;
+}
+
+.animate-fade-in {
+  animation: fade-in var(--duration-slow) var(--ease-out) both;
+}
+
+/* ============================================================
+   Stagger container — applies stagger-in to direct children
+   ============================================================ */
+.stagger-container > * {
+  opacity: 0;
+  animation: stagger-in var(--duration-slow) var(--ease-out) both;
+}
+
+.stagger-container > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-container > *:nth-child(2) { animation-delay: 50ms; }
+.stagger-container > *:nth-child(3) { animation-delay: 100ms; }
+.stagger-container > *:nth-child(4) { animation-delay: 150ms; }
+.stagger-container > *:nth-child(5) { animation-delay: 200ms; }
+.stagger-container > *:nth-child(6) { animation-delay: 250ms; }
+.stagger-container > *:nth-child(7) { animation-delay: 300ms; }
+.stagger-container > *:nth-child(8) { animation-delay: 350ms; }
+.stagger-container > *:nth-child(9) { animation-delay: 400ms; }
+.stagger-container > *:nth-child(10) { animation-delay: 450ms; }
+.stagger-container > *:nth-child(11) { animation-delay: 500ms; }
+.stagger-container > *:nth-child(12) { animation-delay: 550ms; }
+
+/* ============================================================
+   Reduced motion — respect user preferences
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .stagger-container > * {
+    opacity: 1;
+    animation: none;
+  }
+}

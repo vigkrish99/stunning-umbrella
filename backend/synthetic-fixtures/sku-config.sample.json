@@ -1,0 +1,56 @@
+{
+  "_comment": "SYNTHETIC SAMPLE — illustrative SKU + rotation threshold config. Real config in MongoDB at runtime.",
+  "skus": [
+    {
+      "skuCode": "O2-7M3",
+      "skuName": "Oxygen 7m3 Industrial",
+      "category": "oxygen",
+      "rotationExcellent": 4,
+      "rotationGood": 2,
+      "rotationPoor": 1,
+      "comment": "Fastest rotation; refilled every ~5-15 days at active customers"
+    },
+    {
+      "skuCode": "O2-MEDICAL",
+      "skuName": "Medical Oxygen 7m3",
+      "category": "oxygen",
+      "rotationExcellent": 3,
+      "rotationGood": 1.5,
+      "rotationPoor": 0.75,
+      "comment": "Hospital cylinders held longer; lower targets"
+    },
+    {
+      "skuCode": "CO2-30KG",
+      "skuName": "CO2 30kg",
+      "category": "co2",
+      "rotationExcellent": 2,
+      "rotationGood": 1.25,
+      "rotationPoor": 0.6,
+      "comment": "Naturally slow rotation due to consumption pattern"
+    },
+    {
+      "skuCode": "LPG-19KG",
+      "skuName": "LPG 19kg Commercial",
+      "category": "lpg",
+      "rotationExcellent": 2.5,
+      "rotationGood": 1.5,
+      "rotationPoor": 0.75,
+      "comment": "Commercial LPG kitchens"
+    },
+    {
+      "skuCode": "ARGON-7M3",
+      "skuName": "Argon 7m3",
+      "category": "argon",
+      "rotationExcellent": 1.5,
+      "rotationGood": 0.75,
+      "rotationPoor": 0.3,
+      "comment": "Specialty gas; very slow rotation expected"
+    }
+  ],
+  "globalConfig": {
+    "cylinderCostInr": 7500,
+    "inactiveCustomerDays": 60,
+    "atRiskAlertChannel": "whatsapp",
+    "fleetCapitalInr": 22500000
+  }
+}

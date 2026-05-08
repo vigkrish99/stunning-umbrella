@@ -1,0 +1,66 @@
+[
+  {
+    "_comment": "SYNTHETIC SAMPLE — fabricated cylinder holdings per customer per SKU.",
+    "customerId": "GX00001",
+    "skuCode": "O2-7M3",
+    "skuName": "Oxygen 7m3 Industrial",
+    "totalHeld": 14,
+    "lastUpdated": "2026-05-01"
+  },
+  {
+    "customerId": "GX00001",
+    "skuCode": "ARGON-7M3",
+    "skuName": "Argon 7m3",
+    "totalHeld": 4,
+    "lastUpdated": "2026-05-01"
+  },
+  {
+    "customerId": "GX00002",
+    "skuCode": "O2-7M3",
+    "skuName": "Oxygen 7m3 Industrial",
+    "totalHeld": 480,
+    "lastUpdated": "2026-05-01"
+  },
+  {
+    "customerId": "GX00002",
+    "skuCode": "CO2-30KG",
+    "skuName": "CO2 30kg",
+    "totalHeld": 320,
+    "lastUpdated": "2026-05-01"
+  },
+  {
+    "customerId": "GX00002",
+    "skuCode": "LPG-19KG",
+    "skuName": "LPG 19kg Commercial",
+    "totalHeld": 120,
+    "lastUpdated": "2026-05-01"
+  },
+  {
+    "customerId": "GX00003",
+    "skuCode": "O2-7M3",
+    "skuName": "Oxygen 7m3 Industrial",
+    "totalHeld": 60,
+    "lastUpdated": "2026-05-04"
+  },
+  {
+    "customerId": "GX00003",
+    "skuCode": "CO2-30KG",
+    "skuName": "CO2 30kg",
+    "totalHeld": 15,
+    "lastUpdated": "2026-05-04"
+  },
+  {
+    "customerId": "GX00004",
+    "skuCode": "O2-7M3",
+    "skuName": "Oxygen 7m3 Industrial",
+    "totalHeld": 12,
+    "lastUpdated": "2026-02-08"
+  },
+  {
+    "customerId": "GX00005",
+    "skuCode": "O2-MEDICAL",
+    "skuName": "Medical Oxygen 7m3",
+    "totalHeld": 240,
+    "lastUpdated": "2026-04-30"
+  }
+]

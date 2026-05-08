@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log
+.env
+.env.local
+.git
+.gitignore
+data/trackabout/*.json
+data/zoho/*.json
+logs/*.log
+SYNC_FINDINGS.md

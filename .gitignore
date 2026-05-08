@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+
+# Build artifacts
+.next/
+dist/
+build/
+coverage/
+.cache/
+*.tsbuildinfo
+
+# Environment - NEVER commit
+.env
+.env.*
+!.env.example
+!.env.template
+!.env.local.example
+backend/.env*
+!backend/.env.example
+!backend/.env.template
+dashboard/.env*
+!dashboard/.env.local.example
+
+# Logs
+*.log
+backend/logs/
+backend/tmp/
+
+# Local dev / planning artifacts (often contain credentials)
+docs/superpowers/
+.claude/
+.serena/
+.specstory/
+.playwright-mcp/
+
+# Test artifacts
+test-results/
+playwright-report/
+
+# Postman collections (often contain tenant config)
+backend/postman/
+postman/
+
+# Real data dumps
+data/
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,64 @@
+[
+  {
+    "_comment": "SYNTHETIC SAMPLE — fabricated; not real client data",
+    "trackaboutId": "GX00001",
+    "zohoId": "<synthetic-zoho-id-001>",
+    "name": "EXAMPLE WELDING WORKSHOP",
+    "city": "Sample City",
+    "type": "retail",
+    "mobile": "9876500001",
+    "creditDays": 30,
+    "totalCylindersHeld": 18,
+    "lastInvoiceDate": "2026-04-22",
+    "performanceTier": "good"
+  },
+  {
+    "trackaboutId": "GX00002",
+    "zohoId": "<synthetic-zoho-id-002>",
+    "name": "DEMO INDUSTRIAL FABRICATORS",
+    "city": "Sample City",
+    "type": "bulk",
+    "mobile": "9876500002",
+    "creditDays": 45,
+    "totalCylindersHeld": 920,
+    "lastInvoiceDate": "2026-05-01",
+    "performanceTier": "excellent"
+  },
+  {
+    "trackaboutId": "GX00003",
+    "zohoId": "<synthetic-zoho-id-003>",
+    "name": "FICTIONAL GAS TRADERS",
+    "city": "Sample Town",
+    "type": "dealer",
+    "mobile": "9876500003",
+    "creditDays": 0,
+    "totalCylindersHeld": 75,
+    "lastInvoiceDate": "2026-05-04",
+    "performanceTier": "average"
+  },
+  {
+    "trackaboutId": "GX00004",
+    "zohoId": "<synthetic-zoho-id-004>",
+    "name": "EXAMPLE AGRICULTURE WORKS",
+    "city": "Sample Village",
+    "type": "retail",
+    "mobile": "9876500004",
+    "creditDays": 30,
+    "totalCylindersHeld": 12,
+    "lastInvoiceDate": "2026-02-08",
+    "performanceTier": "at-risk",
+    "atRiskReason": "no_invoice_60_days"
+  },
+  {
+    "trackaboutId": "GX00005",
+    "zohoId": "<synthetic-zoho-id-005>",
+    "name": "PLACEHOLDER HOSPITAL SUPPLIES",
+    "city": "Sample City",
+    "type": "bulk",
+    "mobile": "9876500005",
+    "creditDays": 60,
+    "totalCylindersHeld": 240,
+    "lastInvoiceDate": "2026-04-30",
+    "performanceTier": "good"
+  }
+]
